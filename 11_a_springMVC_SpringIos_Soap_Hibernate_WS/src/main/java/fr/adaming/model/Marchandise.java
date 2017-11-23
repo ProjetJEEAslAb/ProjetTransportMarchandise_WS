@@ -2,6 +2,13 @@ package fr.adaming.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="marchandises")
 public class Marchandise implements Serializable {
 
 	// ==============attributs================//
@@ -10,6 +17,15 @@ public class Marchandise implements Serializable {
 	private double poids;
 	private double volume;
 
+	@ManyToOne
+	@JoinColumn(name="cargRout_id", referencedColumnName="ref")
+	private CargaisonRoutiere cargaisonRoutiere;
+	
+	@ManyToOne
+	@JoinColumn(name="cargAer_id", referencedColumnName="ref")
+	private CargaisonAerienne cargaisonAerienne;
+	
+	
 	// ==============constructeur================//
 
 	public Marchandise() {
