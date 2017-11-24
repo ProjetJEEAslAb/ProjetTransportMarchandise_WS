@@ -11,14 +11,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Cargaisonaerienne")
+@Table(name = "ca")
 public class CargaisonAerienne extends Cargaison {
 
 	// ==============attributs================//
 	private double poidsMax;
 
 	// ==========transformation de l'association uml en java============//
-	@OneToMany(mappedBy="cargAerienne")
+	@OneToMany(mappedBy="cargaisonAerienne")
 	private List<Marchandise> listeMarchandise;
 	
 	// ==============constructeur================//
