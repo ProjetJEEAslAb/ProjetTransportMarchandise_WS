@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,7 +35,7 @@ public class CargaisonRoutiere extends Cargaison {
 	}
 
 	// ==========transformation de l'association uml en java============//
-	@OneToMany(mappedBy="cargaisonRoutiere")
+	@OneToMany(mappedBy="cargaisonRoutiere",fetch=FetchType.LAZY)
 	private List<Marchandise> listeMarchandise;
 
 	// ==============getters et setters================//

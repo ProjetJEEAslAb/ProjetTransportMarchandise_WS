@@ -3,7 +3,9 @@ package fr.adaming.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,7 +20,7 @@ public class CargaisonAerienne extends Cargaison {
 	private double poidsMax;
 
 	// ==========transformation de l'association uml en java============//
-	@OneToMany(mappedBy="cargaisonAerienne")
+	@OneToMany(mappedBy="cargaisonAerienne",cascade=CascadeType.ALL)
 	private List<Marchandise> listeMarchandise;
 	
 	// ==============constructeur================//
